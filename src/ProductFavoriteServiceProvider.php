@@ -4,6 +4,8 @@ namespace GIS\ProductFavorite;
 
 use GIS\ProductFavorite\Helpers\FavoriteActionsManager;
 use GIS\ProductFavorite\Livewire\Web\Catalog\SwitchFavoriteWire;
+use GIS\ProductFavorite\Models\FavoriteList;
+use GIS\ProductFavorite\Observers\FavoriteListObserver;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 
@@ -19,8 +21,16 @@ class ProductFavoriteServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        $this->observeModels();
         $this->loadViewsFrom(__DIR__ . "/resources/views", "pf");
         $this->addLivewireComponents();
+    }
+
+    protected function observeModels(): void
+    {
+        $listModelClass = config("product-favorite.customFavoriteListModel") ?? FavoriteList::class;
+        $listObserverClass = config("product-favorite.customFavoriteListModel") ?? FavoriteListObserver::class;
+        $listModelClass::observe($listObserverClass);
     }
 
     protected function addLivewireComponents(): void
