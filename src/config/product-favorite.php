@@ -1,3 +1,9 @@
 <?php
 
-return [];
+return [
+    // Facades
+    "customFavoriteActionsManager" => null,
+
+    // Components
+    "customSwitchFavoriteComponent" => null,
+];
