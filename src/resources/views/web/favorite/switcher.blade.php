@@ -1,3 +1,4 @@
 <div>
-    <livewire:pf-switch-favorite :product="$product" />
+    @php($key = "favorite-{$product->id}")
+    <livewire:pf-switch-favorite :product="$product" :key="$key" lazy />
 </div>
