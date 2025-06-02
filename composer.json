@@ -1,0 +1,27 @@
+{
+    "name": "4geo35/product-favorite",
+    "description": "Favorite list for products",
+    "minimum-stability": "div",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vladimir",
+            "email": "aweram-team@yandex.ru"
+        }
+    ],
+    "require": {
+        "4geo35/category-product": "@dev"
+    },
+    "autoload": {
+        "prs-4": {
+            "GIS\\ProductFavorite\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GIS\\ProductFavorite\\ProductFavoriteServiceProvider"
+            ]
+        }
+    }
+}
