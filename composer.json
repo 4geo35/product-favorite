@@ -13,7 +13,7 @@
         "4geo35/category-product": "@dev"
     },
     "autoload": {
-        "prs-4": {
+        "psr-4": {
             "GIS\\ProductFavorite\\": "src/"
         }
     },
