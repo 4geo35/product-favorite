@@ -10,4 +10,5 @@ return [
 
     // Components
     "customSwitchFavoriteComponent" => null,
+    "customFavoriteIcoComponent" => null,
 ];

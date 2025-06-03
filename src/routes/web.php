@@ -7,5 +7,5 @@ Route::middleware(["web"])
     ->group(function () {
         Route::get("/favorite", function () {
             return "favorite";
-        });
+        })->name("favorite");
     });

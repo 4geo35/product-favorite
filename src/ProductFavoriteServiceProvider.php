@@ -3,6 +3,7 @@
 namespace GIS\ProductFavorite;
 
 use GIS\ProductFavorite\Helpers\FavoriteActionsManager;
+use GIS\ProductFavorite\Livewire\Web\Catalog\FavoriteIcoWire;
 use GIS\ProductFavorite\Livewire\Web\Catalog\SwitchFavoriteWire;
 use GIS\ProductFavorite\Models\FavoriteList;
 use GIS\ProductFavorite\Observers\FavoriteListObserver;
@@ -39,6 +40,12 @@ class ProductFavoriteServiceProvider extends ServiceProvider
         Livewire::component(
             "pf-switch-favorite",
             $component ?? SwitchFavoriteWire::class
+        );
+
+        $component = config("product-favorite.customFavoriteIcoComponent");
+        Livewire::component(
+            "pf-ico-favorite",
+            $component ?? FavoriteIcoWire::class
         );
     }
 
