@@ -44,12 +44,6 @@ class FavoriteActionsManager
 
     public function addToFavorite(ProductInterface $product, FavoriteListInterface $list): FavoriteListInterface
     {
-        // Если товар выключен, вернуть список без изменений
-        if (! $product->published_at) {
-            session()->flash("switchFavorite-error", "Товар снят с продажи");
-            return $list;
-        }
-
         $list->products()->syncWithoutDetaching([
             $product->id
         ]);
