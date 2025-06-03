@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use GIS\ProductFavorite\Http\Controllers\Web\FavoriteController;
 
 Route::middleware(["web"])
     ->as("web.")
     ->group(function () {
-        Route::get("/favorite", function () {
-            return "favorite";
-        })->name("favorite");
+        $controllerClass = config("product-favorite.customFavoriteWebController") ?? FavoriteController::class;
+        Route::get("/favorite", [$controllerClass, "page"])->name("favorite");
     });
