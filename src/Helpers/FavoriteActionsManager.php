@@ -182,7 +182,7 @@ class FavoriteActionsManager
         return Cache::rememberForever($key, function () use ($uuid) {
             $listModelClass = config("product-favorite.customFavoriteListModel") ?? FavoriteList::class;
             try {
-                return $listModelClass::query()->firstOrFail($uuid);
+                return $listModelClass::query()->where("id", $uuid)->firstOrFail();
             } catch (\Exception $e) {
                 return null;
             }
