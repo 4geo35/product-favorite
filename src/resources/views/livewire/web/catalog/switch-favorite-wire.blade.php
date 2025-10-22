@@ -2,8 +2,8 @@
     <button type="button" class="text-primary hover:text-primary-hover cursor-pointer p-indent-half disabled:text-primary/60"
             wire:loading.attr="disabled"
             wire:click="switchProduct">
-        @if ($inFavorite) <x-pf::ico.favorite />
-        @else <x-pf::ico.favorite-border />
+        @if ($inFavorite) <x-pf::ico.heart width="24" height="auto" />
+        @else <x-pf::ico.heart-border width="24" height="auto" />
         @endif
     </button>
 </div>
