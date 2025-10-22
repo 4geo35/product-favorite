@@ -12,6 +12,7 @@ class SwitchFavoriteWire extends Component
     public ProductInterface $product;
 
     public bool $inFavorite = false;
+    public bool $btnView = false;
 
     public function mount(): void
     {
