@@ -1,4 +1,4 @@
-<div class="{{ $btnView ? 'mt-indent-half' : ($textView ? '' : 'absolute z-10 top-0 right-0') }}">
+<div class="{{ $btnView || $textView ? 'mt-indent-half' : 'absolute z-10 top-0 right-0' }}">
     @if ($btnView)
         <button type="button" class="btn btn-outline-primary px-btn-x-ico"
                 wire:loading.attr="disabled"
