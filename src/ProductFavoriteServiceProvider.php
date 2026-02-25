@@ -17,14 +17,14 @@ class ProductFavoriteServiceProvider extends ServiceProvider
     {
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
         $this->mergeConfigFrom(__DIR__ . "/config/product-favorite.php", "product-favorite");
-        $this->loadRoutesFrom(__DIR__ . "/routes/web.php");
         $this->initFacades();
     }
 
     public function boot(): void
     {
-        $this->observeModels();
         $this->loadViewsFrom(__DIR__ . "/resources/views", "pf");
+        $this->loadRoutesFrom(__DIR__ . "/routes/web.php");
+        $this->observeModels();
         $this->addLivewireComponents();
     }
 
