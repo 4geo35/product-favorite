@@ -1,8 +1,7 @@
 <?php
 
 return [
-    // Web
-    "customFavoriteWebController" => null,
+    // Settings
     "useBreadcrumbs" => true,
     "useH1" => true,
     "favoritePageTitle" => "Избранное",
@@ -10,6 +9,9 @@ return [
     // Models
     "customFavoriteListModel" => null,
     "customFavoriteListModelObserver" => null,
+
+    // Controllers
+    "customFavoriteWebController" => null,
 
     // Facades
     "customFavoriteActionsManager" => null,
